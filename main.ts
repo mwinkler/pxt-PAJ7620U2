@@ -276,4 +276,41 @@ namespace m5gesture {
             default: return "Unknown"
         }
     }
+
+    // Internal: handlers and watcher for gesture change events
+    let _gestureChangeHandlers: ((gesture: Gesture) => void)[] = []
+    let _watcherStarted = false
+
+    function _startWatcher(): void {
+        if (_watcherStarted) return
+        _watcherStarted = true
+        control.inBackground(() => {
+            let last = Gesture.None
+            while (true) {
+                if (isInitialized) {
+                    const g = getGesture()
+                    if (g != last) {
+                        last = g
+                        for (const h of _gestureChangeHandlers) {
+                            h(g)
+                        }
+                    }
+                }
+                basic.pause(100)
+            }
+        })
+    }
+
+    /**
+     * Run code when the gesture changes.
+     * Handler receives the new gesture value.
+     */
+    //% blockId=m5gesture_on_gesture_changed
+    //% block="on gesture changed"
+    //% draggableParameters="reporter"
+    //% weight=85
+    export function onGestureChanged(handler: (gesture: Gesture) => void): void {
+        _gestureChangeHandlers.push(handler)
+        _startWatcher()
+    }
 }
