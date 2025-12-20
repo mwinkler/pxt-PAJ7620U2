@@ -5,7 +5,7 @@
  * It can recognize 9 gestures: up, down, left, right, forward, backward, 
  * clockwise, anti-clockwise, and wave.
  */
-//% weight=100 color=#0fbc11 icon="\uf256" block="M5 Gesture"
+//% color=#0079B9 icon="\uf256" block="M5 Gesture"
 namespace m5gesture {
     // Device ID
     const PAJ7620_IIC_ADDR = 0x73
