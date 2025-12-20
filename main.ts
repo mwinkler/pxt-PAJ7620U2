@@ -1,12 +1,12 @@
 
 /**
- * PAJ7620U2 Gesture Sensor
+ * M5Stack unit gesture sensor (PAJ7620U2)
  * The PAJ7620 integrates gesture recognition function with general I2C interface.
  * It can recognize 9 gestures: up, down, left, right, forward, backward, 
  * clockwise, anti-clockwise, and wave.
  */
-//% weight=100 color=#0fbc11 icon="\uf256" block="PAJ7620U2"
-namespace PAJ7620U2 {
+//% weight=100 color=#0fbc11 icon="\uf256" block="M5 Gesture"
+namespace m5gesture {
     // Device ID
     const PAJ7620_IIC_ADDR = 0x73
     const PAJ7620_PARTID = 0x7620

@@ -1,8 +1,9 @@
 
-# PAJ7620U2 Gesture Sensor (MakeCode)
+# M5Stack Gesture Sensor (PAJ7620U2)
 
 Gesture recognition blocks and TypeScript APIs for the PAJ7620U2 sensor (I2C, address 0x73). Supports detecting up, down, left, right, forward, backward, clockwise, anti-clockwise, and wave.  
-Ported from 'DFRobot_PAJ7620U2' python library.
+Ported from https://github.com/DFRobot/DFRobot_PAJ7620U2/blob/master/python/raspberrypi/DFRobot_PAJ7620U2.py
+python library.
 
 ## Install as Extension
 
@@ -11,20 +12,20 @@ This repository can be added as an extension in MakeCode.
 - Open the MakeCode editor for your board (e.g., micro:bit or Calliope mini)
 - Create a new project
 - Click the gear icon → **Extensions**
-- Search for your GitHub repository URL and import (replace with your repo URL when published)
+- Search for GitHub repository URL and import https://github.com/mwinkler/pxt-m5stack-unit-gesture
 
 ## Usage
 
 Initialize the sensor once, then read gestures in a loop.
 
 ```ts
-PAJ7620U2.init()
-PAJ7620U2.setGestureHighRate(true)
+m5gesture.init()
+m5gesture.setGestureHighRate(true)
 
 basic.forever(() => {
-		const g = PAJ7620U2.getGesture()
-		if (g != PAJ7620U2.Gesture.None) {
-				basic.showString(PAJ7620U2.gestureName(g))
+		const g = m5gesture.getGesture()
+		if (g != m5gesture.Gesture.None) {
+				basic.showString(m5gesture.gestureName(g))
 		}
 		basic.pause(200)
 })
@@ -32,7 +33,7 @@ basic.forever(() => {
 
 ## Blocks
 
-- Initialize: “initialize PAJ7620U2”
+- Initialize: “initialize M5 Gesture”
 - Mode: “set gesture mode high rate”
 - Read: “get gesture”
 - Predicate: “gesture is …”
@@ -43,11 +44,6 @@ basic.forever(() => {
 - Sensor: PAJ7620U2 module
 - Bus: I2C at address 0x73
 - Power: 3.3V; connect SDA/SCL to your board’s I2C pins
-
-## Targets
-
-- micro:bit
-- Calliope mini
 
 ## License
 

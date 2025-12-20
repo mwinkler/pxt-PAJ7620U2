@@ -1,7 +1,7 @@
 {
-    "name": "pxt-PAJ7620U2",
+    "name": "pxt-m5stack-unit-gesture",
     "version": "1.0.0",
-    "description": "PAJ7620U2 Gesture Sensor",
+    "description": "M5Stack unit gesture sensor (PAJ7620U2)",
     "dependencies": {
         "core": "*"
     },
@@ -9,9 +9,5 @@
         "README.md",
         "main.ts"
     ],
-    "public": true,
-    "supportedTargets": [
-        "microbit",
-        "calliopemini"
-    ]
+    "public": true
 }
