@@ -1,7 +1,7 @@
 {
     "name": "pxt-m5stack-unit-gesture",
     "version": "1.0.0",
-    "description": "M5Stack unit gesture sensor (PAJ7620U2)",
+    "description": "M5Stack Gesture Unit (PAJ7620U2)",
     "dependencies": {
         "core": "*"
     },
