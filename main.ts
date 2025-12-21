@@ -175,11 +175,10 @@ namespace m5gesture {
         selectBank(PAJ7620_BANK0)
         basic.pause(100)
         isInitialized = true
-        return
     }
 
     /**
-     * Set gesture detection mode
+     * Set gesture detection mode - true for fast detection, false for slow detection with combined gestures
      * @param highRate true for fast detection, false for slow detection with combined gestures
      */
     //% blockId=m5gesture_set_mode
@@ -187,6 +186,7 @@ namespace m5gesture {
     //% highRate.shadow="toggleYesNo"
     //% highRate.defl=true
     //% weight=90
+    //% advanced=true
     export function setGestureHighRate(highRate: boolean): void {
         gestureHighRate = highRate
     }
@@ -260,6 +260,7 @@ namespace m5gesture {
     //% blockId=m5gesture_gesture_name
     //% block="name of gesture %gesture"
     //% weight=60
+    //% advanced=true
     export function gestureName(gesture: Gesture): string {
         switch (gesture) {
             case Gesture.None: return "None"
